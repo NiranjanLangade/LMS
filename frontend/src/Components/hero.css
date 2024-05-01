@@ -1,0 +1,40 @@
+.hero-section {
+	background-image: url("your-hero-image.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	text-align: center;
+}
+
+.hero-content {
+	max-width: 600px;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+p {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+}
+
+button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
