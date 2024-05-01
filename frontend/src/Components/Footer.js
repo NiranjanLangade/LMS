@@ -5,35 +5,28 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+	const { t } = useTranslation();
 	return (
 		<div className="footer">
 			<div>
 				<div className="footer-data">
 					<div className="contact-details">
-						<h1>Contact Us</h1>
-						<p>Librarian</p>
-						<p>Vishwakarma Institute of Technology</p>
-						<p>Bibwewadi,Pune - 411037</p>
-						<p>Maharashtra</p>
-						<p>India</p>
-						<p>
-							<b>Email:</b>library@vit.edu
-						</p>
-					</div>
-					<div className="usefull-links">
-						<h1>Usefull Links</h1>
-						<a href="#home">Home</a>
-						<a href="#home">Signin</a>
-						<a href="#home">Link-1</a>
-						<a href="#home">Link-1</a>
+						<h1>{t("heading")}</h1>
+						<p>{t("librarian")}</p>
+						<p>{t("institute")}</p>
+						<p>{t("address")}</p>
+						<p>{t("state")}</p>
+						<p>{t("country")}</p>
+						<p>{t("email")}</p>
 					</div>
 					<div className="librarian-details">
-						<h1>Librarian : </h1>
-						<p>Niranjan Langade</p>
-						<p>M.Phil.</p>
-						<p>Contact: +91 9123456787</p>
+						<h1>{t("librarian")}: </h1>
+						<p>{t("name")}</p>
+						<p>{t("qualification")}</p>
+						<p>{t("contact")}</p>
 					</div>
 				</div>
 				<div className="contact-social">
@@ -53,9 +46,9 @@ function Footer() {
 			</div>
 			<div className="copyright-details">
 				<p className="footer-copyright">
-					&#169; 2024 copyright all right reserved
+					&#169; {t("copyright")}
 					<br />
-					<span>A project by TY-44</span>
+					<span>{t("project")}</span>
 				</p>
 			</div>
 		</div>
