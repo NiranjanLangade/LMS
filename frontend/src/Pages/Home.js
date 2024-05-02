@@ -4,8 +4,7 @@ import Footer from "../Components/Footer";
 import Hero from "../Components/hero";
 import i18n from "i18next";
 
-// Change the language to French
-i18n.changeLanguage("mr");
+i18n.changeLanguage("en");
 
 function Home() {
 	return (

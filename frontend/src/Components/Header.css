@@ -86,6 +86,14 @@ a {
 	display: block;
 }
 
+select {
+	color: white !important;
+}
+
+.MuiInputBase-root {
+	color: white !important;
+}
+
 /* Nav Options are given in this to make the search input as big as possible */
 
 @media (min-width: 768px) {
