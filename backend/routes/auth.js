@@ -1,8 +1,20 @@
 import express from "express";
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
+import cors from "cors";
 
 const router = express.Router();
+
+
+app.use(
+  cors({
+    origin: "https://e-library-ruby-alpha.vercel.app", // Allow this origin
+    credentials: true, // Allow credentials
+    methods: "GET, POST, PUT, DELETE", // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
+
 
 /* User Registration */
 router.post("/register", async (req, res) => {
