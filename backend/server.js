@@ -14,11 +14,11 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 /* Middlewares */
-// Configure CORS with specific origin
+// Configure CORS with the correct origin
 app.use(
   cors({
-    origin: "https://e-library-ruby-alpha.vercel.app", // Replace with your frontend's URL
-    credentials: true, // Allow credentials (e.g., cookies)
+    origin: "https://e-library-ruby-alpha.vercel.app", // Frontend origin
+    credentials: true, // To allow cookies or auth headers
     methods: "GET, POST, PUT, DELETE", // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
   })
