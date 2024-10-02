@@ -14,15 +14,14 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 /* Middlewares */
-app.use(express.json());
-const corsOptions = {
-    origin: ["https://e-library-ruby-alpha.vercel.app", "http://localhost:3000"],
-    credentials: true,
-    methods: "GET, POST, OPTIONS, PUT, DELETE",
-    allowedHeaders: ["Content-Type", "X-Auth-Token", "Origin", "Authorization"],
-  };
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://e-library-ruby-alpha.vercel.app");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type, X-Auth-Token, Origin, Authorization");
+    next();
+  });
 
-  app.use(cors(corsOptions));
 
 
 /* API Routes */
