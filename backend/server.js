@@ -16,13 +16,16 @@ const port = process.env.PORT || 4000;
 /* Middlewares */
 // Configure CORS with the correct origin
 app.use(
-  cors({
-    origin: "https://e-library-ruby-alpha.vercel.app", // Frontend origin
-    credentials: true, // To allow cookies or auth headers
-    methods: "GET, POST, PUT, DELETE", // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-  })
-);
+    cors({
+      origin: "https://e-library-ruby-alpha.vercel.app", // Frontend origin
+      credentials: true, // Allow cookies or auth headers
+      methods: "GET, POST, PUT, DELETE", // Allowed methods
+      allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    })
+  );
+
+  app.use(cors()); // For global access (to test)
+
 
 /* API Routes */
 app.use("/api/auth", authRoutes);
@@ -30,6 +33,9 @@ app.use("/api/users", userRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/categories", categoryRoutes);
+
+app.options("*", cors());
+
 
 /* MongoDB connection */
 mongoose.connect(
