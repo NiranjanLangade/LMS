@@ -47,6 +47,7 @@ function Header() {
 						<MenuItem value="mr">Marathi</MenuItem>
 						<MenuItem value="hi">Hindi</MenuItem>
 						<MenuItem value="fr">French</MenuItem>
+						<MenuItem value="ru">Russian</MenuItem>
 					</Select>
 
 					<li
