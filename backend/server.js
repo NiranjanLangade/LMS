@@ -14,17 +14,15 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 /* Middlewares */
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://e-library-ruby-alpha.vercel.app");
-    res.header("Access-Control-Allow-Credentials", "true");
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, X-Auth-Token, Origin, Authorization");
-    next();
-  });
-
-  app.use(cors());
-
-
+// Configure CORS with specific origin
+app.use(
+  cors({
+    origin: "https://e-library-ruby-alpha.vercel.app", // Replace with your frontend's URL
+    credentials: true, // Allow credentials (e.g., cookies)
+    methods: "GET, POST, PUT, DELETE", // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
 
 /* API Routes */
 app.use("/api/auth", authRoutes);
@@ -32,8 +30,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/categories", categoryRoutes);
-
-
 
 /* MongoDB connection */
 mongoose.connect(
