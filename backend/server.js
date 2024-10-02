@@ -15,15 +15,6 @@ const port = process.env.PORT || 4000;
 
 /* Middlewares */
 app.use(express.json());
-app.use(cors());
-
-/* API Routes */
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/books", bookRoutes);
-app.use("/api/transactions", transactionRoutes);
-app.use("/api/categories", categoryRoutes);
-
 const corsOptions = {
     origin: ["https://e-library-ruby-alpha.vercel.app", "http://localhost:3000"],
     credentials: true,
@@ -32,6 +23,16 @@ const corsOptions = {
   };
 
   app.use(cors(corsOptions));
+
+
+/* API Routes */
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/books", bookRoutes);
+app.use("/api/transactions", transactionRoutes);
+app.use("/api/categories", categoryRoutes);
+
+
 
 /* MongoDB connection */
 mongoose.connect(
